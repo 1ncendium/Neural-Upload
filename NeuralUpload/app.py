@@ -10,7 +10,7 @@ from keras.models import Sequential
 from keras.layers import Dense, Flatten,Conv2D, MaxPooling2D, Dropout
 from tensorflow.keras import layers
 
-UPLOAD_FOLDER = './static/uploads'
+UPLOAD_FOLDER = './NeuralUpload/static/uploads'
 ALLOWED_EXTENSIONS = {'jpg', 'png', 'jpeg'}
 
 # Set Flask config..
@@ -107,10 +107,10 @@ def index():
                       optimizer='adam',
                       metrics=['accuracy'])
 
-        model = models.load_model('image_classifier.model')
+        model = models.load_model('NeuralUpload/image_classifier.model')
 
         # Read image
-        new_image = plt.imread(f'./static/uploads/{filename}')
+        new_image = plt.imread(f'./NeuralUpload/static/uploads/{filename}')
 
         # Resize the image
         from skimage.transform import resize
